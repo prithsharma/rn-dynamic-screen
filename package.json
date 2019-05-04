@@ -17,9 +17,11 @@
     "clear-rn-cache": "watchman watch-del-all && rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/metro* && rm -rf $TMPDIR/haste-*"
   },
   "dependencies": {
+    "moment": "^2.24.0",
     "react": "16.8.3",
     "react-native": "0.59.5",
     "react-native-config": "^0.11.7",
+    "react-native-scalable-image": "^0.5.1",
     "react-redux": "^7.0.3",
     "redux-logger": "^3.0.6",
     "redux-starter-kit": "^0.5.1",

@@ -1,12 +1,13 @@
 import React from 'react';
 import {
   Image,
-  TouchableHighlight,
+  TouchableWithoutFeedback,
   Text,
   View,
   StyleSheet,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 
 let styles;
@@ -17,12 +18,12 @@ function Card(props) {
     titleText,
     imgUri,
     descriptionText,
-    // timestamp,
+    timestampStr,
   } = props;
-  const timestampText = 'About 30 mins ago';
+  const timestampText = moment(timestampStr).fromNow();
 
   return (
-    <TouchableHighlight onPress={onPress}>
+    <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.container}>
         <View>
           <Text style={styles.titleText}>
@@ -42,7 +43,7 @@ function Card(props) {
           </View>
         </View>
       </View>
-    </TouchableHighlight>
+    </TouchableWithoutFeedback>
   );
 }
 
@@ -51,6 +52,7 @@ Card.propTypes = {
   titleText: PropTypes.string.isRequired,
   imgUri: PropTypes.string.isRequired,
   descriptionText: PropTypes.string,
+  timestampStr: PropTypes.string.isRequired,
 };
 
 
@@ -61,26 +63,33 @@ Card.defaultProps = {
 
 styles = StyleSheet.create({
   container: {
-    width: '100%',
     backgroundColor: 'white',
     padding: 10,
+    elevation: 2,
+    borderRadius: 1,
+    shadowColor: 'black',
+    shadowOffset: { width: 0.5, height: 1 },
+    shadowOpacity: 0.4,
+    shadowRadius: 2,
+    marginHorizontal: 5,
   },
   titleText: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
   },
   image: {
     width: '100%',
-    height: 150,
     marginTop: 8,
     marginBottom: 4,
+    resizeMode: 'contain',
+    aspectRatio: 16 / 9,
   },
   descriptionText: {
-    fontSize: 16,
+    fontSize: 12,
   },
   timestamp: {
     color: 'grey',
-    fontSize: 12,
+    fontSize: 10,
     marginBottom: 4,
   },
 });

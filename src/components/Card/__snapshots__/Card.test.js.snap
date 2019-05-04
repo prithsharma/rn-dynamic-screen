@@ -1,0 +1,255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleCard renders correctly 1`] = `
+<TouchableWithoutFeedback
+  onPress={[Function]}
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 1,
+        "elevation": 2,
+        "marginHorizontal": 5,
+        "padding": 6,
+        "paddingVertical": 8,
+        "shadowColor": "black",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 0.5,
+        },
+        "shadowOpacity": 0.4,
+        "shadowRadius": 2,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "marginBottom": 4,
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": "https://facebook.github.io/react-native/docs/assets/favicon.png",
+          }
+        }
+        style={
+          Object {
+            "aspectRatio": 1.5,
+            "flex": 2,
+            "marginRight": 8,
+            "resizeMode": "contain",
+          }
+        }
+      />
+      <View
+        style={
+          Object {
+            "flex": 3,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "flex": 1,
+              "fontSize": 16,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Regian Eersel's game
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "grey",
+              "fontSize": 10,
+            }
+          }
+        >
+          a year ago
+        </Text>
+      </View>
+    </View>
+    <View>
+      <Text
+        numberOfLines={2}
+        style={
+          Object {
+            "fontSize": 12,
+          }
+        }
+      >
+        Regian Eersel's game
+      </Text>
+    </View>
+  </View>
+</TouchableWithoutFeedback>
+`;
+
+exports[`EventCard renders correctly 1`] = `
+<TouchableWithoutFeedback
+  onPress={[Function]}
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "marginBottom": 10,
+      }
+    }
+  >
+    <ScalableImage
+      background={false}
+      onSize={[Function]}
+      source={
+        Object {
+          "uri": "http://res.cloudinary.com/onefc/image/upload/v1554878097/events/Bangkok-2019-05-10/upcoming",
+        }
+      }
+      width={750}
+    />
+  </View>
+</TouchableWithoutFeedback>
+`;
+
+exports[`EventCardMinimised renders correctly 1`] = `
+<TouchableWithoutFeedback
+  onPress={[Function]}
+  style={
+    Object {
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "black",
+        "borderTopColor": "#ffcc01",
+        "borderTopWidth": 2,
+        "flexDirection": "row",
+        "marginBottom": 10,
+        "padding": 6,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "justifyContent": "center",
+          "paddingLeft": 8,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#ffcc01",
+            "fontSize": 15,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 12,
+          }
+        }
+      >
+        , 
+      </Text>
+    </View>
+  </View>
+</TouchableWithoutFeedback>
+`;
+
+exports[`VideoCard renders correctly 1`] = `
+<TouchableWithoutFeedback
+  onPress={[Function]}
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 1,
+        "elevation": 2,
+        "marginHorizontal": 5,
+        "padding": 10,
+        "shadowColor": "black",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 0.5,
+        },
+        "shadowOpacity": 0.4,
+        "shadowRadius": 2,
+      }
+    }
+  >
+    <View>
+      <Text
+        style={
+          Object {
+            "fontSize": 16,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Regian Eersel's game
+      </Text>
+      <Image
+        source={
+          Object {
+            "uri": "http://res.cloudinary.com/onefc/image/upload/v1554878097/events/Bangkok-2019-05-10/upcoming",
+          }
+        }
+        style={
+          Object {
+            "aspectRatio": 1.7777777777777777,
+            "marginBottom": 4,
+            "marginTop": 8,
+            "resizeMode": "contain",
+            "width": "100%",
+          }
+        }
+      />
+      <View>
+        <Text
+          style={
+            Object {
+              "color": "grey",
+              "fontSize": 10,
+              "marginBottom": 4,
+            }
+          }
+        >
+          a year ago
+        </Text>
+        <Text
+          numberOfLines={2}
+          style={
+            Object {
+              "fontSize": 12,
+            }
+          }
+        >
+          
+        </Text>
+      </View>
+    </View>
+  </View>
+</TouchableWithoutFeedback>
+`;

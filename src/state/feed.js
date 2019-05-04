@@ -71,6 +71,16 @@ export function fetchFeed() {
 }
 
 export function selectFeed(state) {
-  const { byId, list } = state.feed;
-  return list.map(id => byId[id]);
+  const {
+    byId,
+    list,
+    error: errorObj,
+    isLoading,
+  } = state.feed;
+
+  return {
+    list: list.map(id => byId[id]),
+    error: errorObj,
+    isLoading,
+  };
 }
