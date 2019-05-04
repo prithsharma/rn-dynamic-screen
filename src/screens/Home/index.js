@@ -140,9 +140,9 @@ export class HomeScreen extends Component {
 
 HomeScreen.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  feedError: PropTypes.oneOf(null, PropTypes.object),
-  eventError: PropTypes.oneOf(null, PropTypes.object),
-  upcomingEvent: PropTypes.oneOf(null, PropTypes.object),
+  feedError: PropTypes.shape({}),
+  eventError: PropTypes.shape({}),
+  upcomingEvent: PropTypes.shape({}),
   feedItems: PropTypes.arrayOf(PropTypes.object).isRequired,
   isFeedLoading: PropTypes.bool.isRequired,
   isEventLoading: PropTypes.bool.isRequired,

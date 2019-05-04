@@ -40,8 +40,8 @@ export default function EventItem(props) {
 }
 
 EventItem.propTypes = {
-  eventError: PropTypes.oneOf(null, PropTypes.object),
-  upcomingEvent: PropTypes.oneOf(null, PropTypes.object),
+  eventError: PropTypes.shape({}),
+  upcomingEvent: PropTypes.shape({}),
   isEventLoading: PropTypes.bool.isRequired,
 };
 

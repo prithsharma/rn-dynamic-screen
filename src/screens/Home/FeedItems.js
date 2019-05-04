@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { ArticleCard, VideoCard } from '../../components/Card';
+import Logger from '../../lib/logger';
 
 let styles;
 
@@ -43,12 +44,12 @@ export function FeedItem({ item }) {
     );
   }
 
-  console.log('Unknown feed item type');
+  Logger.info('Unknown feed item type');
   return null;
 }
 
 FeedItem.propTypes = {
-  item: PropTypes.oneOf(PropTypes.object, PropTypes.null),
+  item: PropTypes.shape({}),
 };
 FeedItem.defaultProps = {
   item: null,

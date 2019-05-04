@@ -19,7 +19,6 @@ function Card(props) {
     title,
     timestampStr,
     showCountdown,
-    ...restProps
   } = props;
   const detailsStr = `${city}, ${localTime}`;
 
@@ -31,7 +30,7 @@ function Card(props) {
 
   return (
     <TouchableWithoutFeedback
-      onPress={onPress} {...restProps}
+      onPress={onPress}
       style={styles.touchableContainer}
     >
       <View style={styles.container}>

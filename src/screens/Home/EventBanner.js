@@ -27,7 +27,7 @@ export default function EventBanner(props) {
 }
 
 EventBanner.propTypes = {
-  event: PropTypes.oneOf(null, PropTypes.object),
+  event: PropTypes.shape({}),
 };
 
 EventBanner.defaultProps = {
