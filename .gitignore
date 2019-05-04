@@ -58,3 +58,5 @@ buck-out/
 .vscode/
 coverage/
 
+# Storybook
+storybook/storyLoader.js
