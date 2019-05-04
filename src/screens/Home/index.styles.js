@@ -12,6 +12,11 @@ export default StyleSheet.create({
     backgroundColor: '#DDDDDD',
     paddingBottom: 50,
   },
+  loadingView: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   feedSeparator: {
     backgroundColor: '#DDDDDD',
     width: '100%',

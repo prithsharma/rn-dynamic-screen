@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import {
   FlatList,
   SafeAreaView,
-  ScrollView,
   View,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styles from './index.styles';
 import Header from '../../components/Header';
+import { SectionSpinner } from '../../components/Spinner';
 import { ArticleCard, EventCard, VideoCard } from '../../components/Card';
 import {
   fetchFeed,
@@ -66,21 +66,34 @@ export class HomeScreen extends Component {
   }
 
   render() {
-    const { feedItems } = this.props;
+    const { feedItems, isFeedLoading } = this.props;
 
     return (
       <SafeAreaView style={styles.safeAreaContainer}>
         <Header />
-        <FlatList
-          data={feedItems}
-          style={styles.container}
-          contentContainerStyle={styles.feed}
-          bounces={false}
-          renderItem={this.constructor.renderFeedItem}
-          ListHeaderComponent={this.constructor.renderUpcomingEvent}
-          ItemSeparatorComponent={this.constructor.renderFeedSeparator}
-          keyExtractor={item => (item ? item.id : 'key')}
-        />
+        {
+          isFeedLoading
+            ? (
+              <View style={styles.loadingView}>
+                <SectionSpinner size="large" visible />
+              </View>
+            )
+            : (
+              <FlatList
+                data={feedItems}
+                style={styles.container}
+                contentContainerStyle={styles.feed}
+                // bounces={false}
+                renderItem={this.constructor.renderFeedItem}
+                ListHeaderComponent={this.constructor.renderUpcomingEvent}
+                ItemSeparatorComponent={this.constructor.renderFeedSeparator}
+                keyExtractor={item => (item ? item.id : 'key')}
+                onRefresh={() => null}
+                progressViewOffset={80}
+                refreshing={isFeedLoading}
+              />
+            )
+        }
       </SafeAreaView>
     );
   }
@@ -89,10 +102,12 @@ export class HomeScreen extends Component {
 HomeScreen.propTypes = {
   dispatch: PropTypes.func.isRequired,
   feedItems: PropTypes.arrayOf(PropTypes.object).isRequired,
+  isFeedLoading: PropTypes.bool.isRequired,
 };
 
 function mapStateToProps(state) {
   return {
+    isFeedLoading: state.feed.isLoading,
     feedItems: selectFeed(state),
     upcomingEvent: selectUpcomingEvent(state),
   };
