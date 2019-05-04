@@ -1,5 +1,9 @@
-import { createReducer } from 'redux-starter-kit';
+// import upcomingEventReducer from './upcoming'
+import feedReducer from './feed';
 
-export default createReducer({}, {});
+export default {
+  // upcoming: upcomingEventReducer,
+  feed: feedReducer,
+};
 
 export * from './feed';
