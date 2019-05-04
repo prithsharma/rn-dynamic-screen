@@ -1,28 +1,42 @@
 import React from 'react';
 import {
-  Image,
+  Dimensions,
   TouchableWithoutFeedback,
   View,
   StyleSheet,
 } from 'react-native';
+import Image from 'react-native-scalable-image';
 import PropTypes from 'prop-types';
+import Countdown from '../Countdown';
 
+
+const { width: VP_WIDTH } = Dimensions.get('screen');
 let styles;
 
 function Card(props) {
   const {
     onPress,
     imgUri,
+    timestampStr,
+    showCountdown,
+    ...restProps
   } = props;
 
+  const countdown = showCountdown && (
+    <View style={styles.countdownContainer}>
+      <Countdown targetTimestamp={timestampStr} />
+    </View>
+  );
+
   return (
-    <TouchableWithoutFeedback onPress={onPress}>
+    <TouchableWithoutFeedback onPress={onPress} {...restProps}>
       <View style={styles.container}>
         <Image
           style={styles.image}
+          width={VP_WIDTH}
           source={{ uri: imgUri }}
         />
-        <View style={styles.descriptionContainer} />
+        {countdown}
       </View>
     </TouchableWithoutFeedback>
   );
@@ -31,8 +45,9 @@ function Card(props) {
 Card.propTypes = {
   onPress: PropTypes.func,
   imgUri: PropTypes.string.isRequired,
+  timestampStr: PropTypes.string.isRequired,
+  showCountdown: PropTypes.bool.isRequired,
 };
-
 
 Card.defaultProps = {
   onPress: Function.prototype,
@@ -43,11 +58,11 @@ styles = StyleSheet.create({
     backgroundColor: 'white',
     marginBottom: 10,
   },
-  image: {
-    width: '100%',
-    height: undefined,
-    aspectRatio: 150 / 76,
-    resizeMode: 'contain',
+  countdownContainer: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
 });
 
