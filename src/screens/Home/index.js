@@ -7,11 +7,12 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import moment from 'moment';
 import styles from './index.styles';
 import Header from '../../components/Header';
+import { FeedItem, FeedSeparator } from './FeedItems';
+import EventItem from './EventItem';
+import EventBanner from './EventBanner';
 import { SectionSpinner } from '../../components/Spinner';
-import { ArticleCard, EventCard, EventCardMinimised, VideoCard } from '../../components/Card';
 import {
   fetchFeed,
   fetchUpcomingEvent,
@@ -20,41 +21,6 @@ import {
 } from '../../state';
 
 export class HomeScreen extends Component {
-  static renderFeedItem({ item }) {
-    if (item.type === 'YOUTUBE') {
-      return (
-        <VideoCard
-          key={item.id}
-          titleText={item.data.title}
-          imgUri={item.data.featured_image.url}
-          descriptionText={item.data.description}
-          timestampStr={item.data.published_date}
-        />
-      );
-    }
-
-    if (item.type === 'ARTICLE') {
-      return (
-        <ArticleCard
-          key={item.id}
-          titleText={item.data.title}
-          imgUri={item.data.featured_image.url}
-          descriptionText={unescape(item.data.description)}
-          timestampStr={item.data.published_date}
-        />
-      );
-    }
-
-    console.log('Unknown feed item type');
-    return null;
-  }
-
-  static renderFeedSeparator() {
-    return (
-      <View style={styles.feedSeparator} />
-    );
-  }
-
   constructor(props) {
     super(props);
     this.headerTopOffset = 200;
@@ -80,32 +46,11 @@ export class HomeScreen extends Component {
       upcomingEvent,
     } = this.props;
 
-    if (eventError) {
-      return this.constructor.renderFeedSeparator();
-    }
-
-    if (isEventLoading || !upcomingEvent) {
-      return null;
-    }
-
-    const eventStartTime = upcomingEvent.startTime;
-    let imgUri = upcomingEvent.creatives.bannerUpcoming.url;
-    let isLive = false;
-    if (moment().isSameOrAfter(moment(eventStartTime))) {
-      imgUri = upcomingEvent.creatives.bannerLive.url;
-      isLive = true;
-    }
-    const cardProps = {
-      title: upcomingEvent.content.name,
-      city: upcomingEvent.content.city,
-      localTime: upcomingEvent.localTime,
-      imgUri,
-      timestampStr: upcomingEvent.startTime,
-      showCountdown: !isLive,
-    };
     return (
-      <EventCard
-        {...cardProps}
+      <EventItem
+        eventError={eventError}
+        isEventLoading={isEventLoading}
+        upcomingEvent={upcomingEvent}
       />
     );
   }
@@ -132,22 +77,9 @@ export class HomeScreen extends Component {
     }
 
     const { upcomingEvent } = this.props;
-    if (!upcomingEvent) {
-      return null;
-    }
-
-    const cardProps = {
-      title: upcomingEvent.content.name,
-      city: upcomingEvent.content.city,
-      localTime: upcomingEvent.localTime,
-      timestampStr: upcomingEvent.startTime,
-      showCountdown: true,
-    };
-
     return (
-      <EventCardMinimised
-        {...cardProps}
-        minimised
+      <EventBanner
+        event={upcomingEvent}
       />
     );
   }
@@ -183,9 +115,9 @@ export class HomeScreen extends Component {
         style={styles.container}
         contentContainerStyle={styles.feed}
         // bounces={false}
-        renderItem={this.constructor.renderFeedItem}
+        renderItem={FeedItem}
         ListHeaderComponent={this.renderUpcomingEvent}
-        ItemSeparatorComponent={this.constructor.renderFeedSeparator}
+        ItemSeparatorComponent={FeedSeparator}
         keyExtractor={item => (item ? item.id : 'key')}
         onRefresh={this.refreshData}
         progressViewOffset={80}

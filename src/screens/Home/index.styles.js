@@ -23,9 +23,4 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  feedSeparator: {
-    backgroundColor: '#DDDDDD',
-    width: '100%',
-    height: 10,
-  },
 });
