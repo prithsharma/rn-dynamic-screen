@@ -42,6 +42,7 @@
     "jest": "^24.7.1",
     "metro-react-native-babel-preset": "^0.54.0",
     "prettier": "^1.17.0",
+    "prop-types": "^15.7.2",
     "react-dom": "16.8.3",
     "react-native-storybook-loader": "^1.8.0",
     "react-native-testing-library": "^1.7.0",
