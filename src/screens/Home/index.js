@@ -63,7 +63,7 @@ export class HomeScreen extends Component {
       this.setState({
         showEventBanner: true,
       });
-    } else if (yOffset < this.headerTopOffset - 30 && showEventBanner) {
+    } else if (yOffset < this.headerTopOffset - 10 && showEventBanner) {
       this.setState({
         showEventBanner: false,
       });
