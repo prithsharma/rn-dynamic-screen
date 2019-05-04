@@ -1,8 +1,8 @@
-// import upcomingEventReducer from './upcoming'
+import upcomingEventReducer from './upcomingEvent';
 import feedReducer from './feed';
 
 export default {
-  // upcoming: upcomingEventReducer,
+  upcoming: upcomingEventReducer,
   feed: feedReducer,
 };
 

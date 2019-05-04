@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import styles from './index.styles';
 import {
   fetchFeed,
+  fetchUpcomingEvent,
   selectFeed,
 } from '../../state';
 
@@ -14,6 +15,7 @@ export class HomeScreen extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(fetchFeed());
+    dispatch(fetchUpcomingEvent());
   }
 
   render() {

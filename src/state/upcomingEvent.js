@@ -1,0 +1,64 @@
+import { createSlice } from 'redux-starter-kit';
+import { get } from '../lib/request';
+import Logger from '../lib/logger';
+
+
+const feedSlice = createSlice({
+  slice: 'upcomingEvent',
+  initialState: {
+    isLoading: false,
+    error: null,
+    data: null,
+  },
+  reducers: {
+    request: state => ({
+      ...state,
+      error: null,
+      isLoading: true,
+    }),
+    success: (state, { payload: eventObj }) => ({
+      ...state,
+      isLoading: false,
+      data: eventObj,
+    }),
+    error: state => ({
+      ...state,
+      isLoading: false,
+      error: true,
+    }),
+  },
+});
+const {
+  reducer,
+  actions: {
+    request,
+    success,
+    error,
+  },
+} = feedSlice;
+
+export default reducer;
+
+export function fetchUpcomingEvent() {
+  return async (dispatch) => {
+    dispatch(request());
+    try {
+      const response = await get('/v4/event');
+      const responseObj = await response.json();
+
+      if (response.ok) {
+        dispatch(success(responseObj.data));
+      } else {
+        dispatch(error({ code: 'UNKNOWN_REQUEST_ERROR', meta: responseObj }));
+      }
+    } catch (e) {
+      Logger.error(e);
+      dispatch(error({ code: 'UNKNOWN_REQUEST_ERROR', meta: e }));
+    }
+  };
+}
+
+export function selectUpcomingEvent(state) {
+  const { data } = state.upcomingEvent;
+  return data;
+}
