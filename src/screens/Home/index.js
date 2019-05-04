@@ -11,7 +11,7 @@ import moment from 'moment';
 import styles from './index.styles';
 import Header from '../../components/Header';
 import { SectionSpinner } from '../../components/Spinner';
-import { ArticleCard, EventCard, VideoCard } from '../../components/Card';
+import { ArticleCard, EventCard, EventCardMinimised, VideoCard } from '../../components/Card';
 import {
   fetchFeed,
   fetchUpcomingEvent,
@@ -126,6 +126,11 @@ export class HomeScreen extends Component {
   }
 
   renderEventBanner() {
+    const { showEventBanner } = this.state;
+    if (!showEventBanner) {
+      return null;
+    }
+
     const { upcomingEvent } = this.props;
     if (!upcomingEvent) {
       return null;
@@ -139,10 +144,9 @@ export class HomeScreen extends Component {
       showCountdown: true,
     };
 
-    return this.state.showEventBanner && (
-      <EventCard
+    return (
+      <EventCardMinimised
         {...cardProps}
-        style={{ position: 'absolute', top: 0, left: 0, right: 0 }}
         minimised
       />
     );
