@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import {
   View,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styles from './index.styles';
-
+import { fetchFeed } from '../../state';
 
 export class HomeScreen extends Component {
   componentDidMount() {
-    // TODO: fetch data here
+    const { dispatch } = this.props;
+    dispatch(fetchFeed());
   }
 
   render() {
@@ -18,6 +20,9 @@ export class HomeScreen extends Component {
   }
 }
 
+HomeScreen.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
 
 function mapStateToProps() {
   return {};
