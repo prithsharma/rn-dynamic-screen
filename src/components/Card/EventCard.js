@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Image,
-  TouchableHighlight,
+  TouchableWithoutFeedback,
   View,
   StyleSheet,
 } from 'react-native';
@@ -16,7 +16,7 @@ function Card(props) {
   } = props;
 
   return (
-    <TouchableHighlight onPress={onPress}>
+    <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.container}>
         <Image
           style={styles.image}
@@ -24,7 +24,7 @@ function Card(props) {
         />
         <View style={styles.descriptionContainer} />
       </View>
-    </TouchableHighlight>
+    </TouchableWithoutFeedback>
   );
 }
 
@@ -41,15 +41,13 @@ Card.defaultProps = {
 styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    padding: 10,
+    marginBottom: 10,
   },
   image: {
     width: '100%',
     height: undefined,
     aspectRatio: 150 / 76,
     resizeMode: 'contain',
-    marginTop: 8,
-    marginBottom: 4,
   },
 });
 

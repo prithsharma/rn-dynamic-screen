@@ -1,19 +1,20 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  container: {
+  safeAreaContainer: {
     flex: 1,
   },
-  searchBar: {
-    position: 'absolute',
-    top: 10,
+  container: {
+    flex: 1,
+    backgroundColor: '#DDDDDD',
   },
-  markersCarousel: {
-    position: 'absolute',
-    bottom: 10,
+  feed: {
+    backgroundColor: '#DDDDDD',
+    paddingBottom: 50,
   },
-  slideStyle: {
-    minHeight: 140,
-    justifyContent: 'center',
+  feedSeparator: {
+    backgroundColor: '#DDDDDD',
+    width: '100%',
+    height: 10,
   },
 });
