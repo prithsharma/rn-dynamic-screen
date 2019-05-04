@@ -5,6 +5,8 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
+    "test:watch": "yarn test --watch",
+    "coverage": "yarn run test --coverage",
     "format": "prettier --write 'src/**/*.{js,jsx}' && yarn lint:eslint --fix",
     "format:check": "prettier -c 'src/**/*.{js,jsx}'",
     "lint": "eslint 'src/**/*.{js,jsx}'",
@@ -30,6 +32,7 @@
     "jest": "^24.7.1",
     "metro-react-native-babel-preset": "^0.54.0",
     "prettier": "^1.17.0",
+    "react-native-testing-library": "^1.7.0",
     "react-test-renderer": "16.8.3"
   },
   "jest": {
