@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 
 import {
+  ArticleCard,
   EventCard,
   VideoCard,
 } from './index';
@@ -20,7 +21,9 @@ storiesOf('Card', module)
     />
   ))
   .add('Article', () => (
-    <VideoCard
+    <ArticleCard
+      titleText="Regian Eersel's game"
       imgUri="https://facebook.github.io/react-native/docs/assets/favicon.png"
+      descriptionText="Regian Eersel's game"
     />
   ));

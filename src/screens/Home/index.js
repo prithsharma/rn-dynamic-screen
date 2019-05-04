@@ -38,16 +38,16 @@ export class HomeScreen extends Component {
       );
     }
 
-    /* if (item.type === 'ARTICLE') {
+    if (item.type === 'ARTICLE') {
       return (
-        <VideoCard
+        <ArticleCard
           key={item.id}
           titleText={item.data.title}
           imgUri={item.data.featured_image.url}
-          descriptionText={item.data.description}
+          descriptionText={unescape(item.data.description)}
         />
       );
-    } */
+    }
 
     console.log('Unknown feed item type');
     return null;
