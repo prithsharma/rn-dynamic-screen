@@ -62,6 +62,10 @@ export class HomeScreen extends Component {
   }
 
   componentDidMount() {
+    this.refreshData();
+  }
+
+  refreshData = () => {
     const { dispatch } = this.props;
     dispatch(fetchFeed());
     dispatch(fetchUpcomingEvent());
@@ -90,7 +94,7 @@ export class HomeScreen extends Component {
                 ListHeaderComponent={this.constructor.renderUpcomingEvent}
                 ItemSeparatorComponent={this.constructor.renderFeedSeparator}
                 keyExtractor={item => (item ? item.id : 'key')}
-                onRefresh={() => null}
+                onRefresh={this.refreshData}
                 progressViewOffset={80}
                 refreshing={isFeedLoading}
               />
