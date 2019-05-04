@@ -8,17 +8,36 @@ const feedSlice = createSlice({
   initialState: {
     isLoading: false,
     error: null,
+    byId: {},
+    list: [],
   },
   reducers: {
     request: state => ({
       ...state,
+      error: null,
       isLoading: true,
     }),
-    success: state => ({
+    success: (state, { payload: feedList }) => {
+      const byId = {};
+      const list = [];
+      feedList.forEach((feedEl) => {
+        byId[feedEl.id] = feedEl;
+        list.push(feedEl.id);
+      });
+
+      return {
+        ...state,
+        byId,
+        list,
+        isLoading: false,
+        error: null,
+      };
+    },
+    error: state => ({
       ...state,
       isLoading: false,
+      error: true,
     }),
-    error() { },
   },
 });
 const {
@@ -30,23 +49,28 @@ const {
   },
 } = feedSlice;
 
-
 export default reducer;
 
 export function fetchFeed() {
   return async (dispatch) => {
     dispatch(request());
     try {
-      const response = await get('/v4/event');
+      const response = await get('/v4/lpfeed');
       const responseObj = await response.json();
 
       if (response.ok) {
         dispatch(success(responseObj.data));
+      } else {
+        dispatch(error({ code: 'UNKNOWN_REQUEST_ERROR', meta: responseObj }));
       }
-      dispatch(error({ data: 'UNKNOWN_REQUEST_ERROR' }));
     } catch (e) {
       Logger.error(e);
-      dispatch(error({ data: 'UNKNOWN_REQUEST_ERROR', meta: e }));
+      dispatch(error({ code: 'UNKNOWN_REQUEST_ERROR', meta: e }));
     }
   };
+}
+
+export function selectFeed(state) {
+  const { byId, list } = state.feed;
+  return list.map(id => byId[id]);
 }

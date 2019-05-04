@@ -5,7 +5,10 @@ import {
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styles from './index.styles';
-import { fetchFeed } from '../../state';
+import {
+  fetchFeed,
+  selectFeed,
+} from '../../state';
 
 export class HomeScreen extends Component {
   componentDidMount() {
@@ -24,7 +27,9 @@ HomeScreen.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
-function mapStateToProps() {
-  return {};
+function mapStateToProps(state) {
+  return {
+    feedItems: selectFeed(state),
+  };
 }
 export default connect(mapStateToProps)(HomeScreen);
