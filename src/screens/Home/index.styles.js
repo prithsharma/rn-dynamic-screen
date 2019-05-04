@@ -17,6 +17,12 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  errorView: {
+    flex: 1,
+    minHeight: 150,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   feedSeparator: {
     backgroundColor: '#DDDDDD',
     width: '100%',

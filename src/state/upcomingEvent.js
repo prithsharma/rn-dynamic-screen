@@ -59,6 +59,14 @@ export function fetchUpcomingEvent() {
 }
 
 export function selectUpcomingEvent(state) {
-  const { data } = state.upcomingEvent;
-  return data;
+  const {
+    data,
+    error: errorObj,
+    isLoading,
+  } = state.upcomingEvent;
+  return {
+    data,
+    error: errorObj,
+    isLoading,
+  };
 }
