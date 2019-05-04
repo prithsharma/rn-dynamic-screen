@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import {
-  View,
+  SafeAreaView,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styles from './index.styles';
+import { EventCard } from '../../components/Card';
 import {
   fetchFeed,
   fetchUpcomingEvent,
@@ -21,7 +22,11 @@ export class HomeScreen extends Component {
 
   render() {
     return (
-      <View style={styles.container} />
+      <SafeAreaView style={styles.container}>
+        <EventCard
+          imgUri="http://res.cloudinary.com/onefc/image/upload/v1554878097/events/Bangkok-2019-05-10/upcoming"
+        />
+      </SafeAreaView>
     );
   }
 }
