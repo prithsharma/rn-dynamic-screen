@@ -17,6 +17,7 @@
     "clear-rn-cache": "watchman watch-del-all && rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/metro* && rm -rf $TMPDIR/haste-*"
   },
   "dependencies": {
+    "moment": "^2.24.0",
     "react": "16.8.3",
     "react-native": "0.59.5",
     "react-native-config": "^0.11.7",

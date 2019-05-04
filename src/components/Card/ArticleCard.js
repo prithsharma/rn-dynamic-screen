@@ -7,6 +7,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 
 let styles;
@@ -17,9 +18,9 @@ function Card(props) {
     titleText,
     imgUri,
     descriptionText,
-    // timestamp,
+    timestampStr,
   } = props;
-  const timestampText = 'About 30 mins ago';
+  const timestampText = moment(timestampStr).fromNow();
 
   return (
     <TouchableWithoutFeedback onPress={onPress}>
@@ -53,6 +54,7 @@ Card.propTypes = {
   titleText: PropTypes.string.isRequired,
   imgUri: PropTypes.string.isRequired,
   descriptionText: PropTypes.string,
+  timestampStr: PropTypes.string.isRequired,
 };
 
 
@@ -98,7 +100,6 @@ styles = StyleSheet.create({
   timestamp: {
     color: 'grey',
     fontSize: 10,
-    marginBottom: 4,
   },
 });
 

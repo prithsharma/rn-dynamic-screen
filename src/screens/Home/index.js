@@ -34,6 +34,7 @@ export class HomeScreen extends Component {
           titleText={item.data.title}
           imgUri={item.data.featured_image.url}
           descriptionText={item.data.description}
+          timestampStr={item.data.published_date}
         />
       );
     }
@@ -45,6 +46,7 @@ export class HomeScreen extends Component {
           titleText={item.data.title}
           imgUri={item.data.featured_image.url}
           descriptionText={unescape(item.data.description)}
+          timestampStr={item.data.published_date}
         />
       );
     }
