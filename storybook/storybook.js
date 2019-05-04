@@ -1,3 +1,4 @@
+import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
 import { getStorybookUI, configure } from '@storybook/react-native';
 import { loadStories } from './storyLoader';
@@ -13,8 +14,15 @@ configure(() => {
 // To find allowed options for getStorybookUI
 const StorybookUIRoot = getStorybookUI({});
 
+/* eslint-disable-next-line react/prefer-stateless-function */
+class StorybookUIHMRRoot extends Component {
+  render() {
+    return <StorybookUIRoot />;
+  }
+}
+
 // If you are using React Native vanilla write your app name here.
 // If you use Expo you can safely remove this line.
-AppRegistry.registerComponent('OneLandingScreen', () => StorybookUIRoot);
+AppRegistry.registerComponent('OneLandingScreen', () => StorybookUIHMRRoot);
 
 export default StorybookUIRoot;
