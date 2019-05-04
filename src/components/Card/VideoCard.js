@@ -76,6 +76,7 @@ styles = StyleSheet.create({
   titleText: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: 'black',
   },
   image: {
     width: '100%',
@@ -86,6 +87,7 @@ styles = StyleSheet.create({
   },
   descriptionText: {
     fontSize: 12,
+    color: 'black',
   },
   timestamp: {
     color: 'grey',
