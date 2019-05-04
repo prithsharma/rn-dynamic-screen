@@ -2,8 +2,9 @@ import upcomingEventReducer from './upcomingEvent';
 import feedReducer from './feed';
 
 export default {
-  upcoming: upcomingEventReducer,
+  upcomingEvent: upcomingEventReducer,
   feed: feedReducer,
 };
 
 export * from './feed';
+export * from './upcomingEvent';

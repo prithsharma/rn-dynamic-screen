@@ -9,6 +9,7 @@ import {
   fetchFeed,
   fetchUpcomingEvent,
   selectFeed,
+  selectUpcomingEvent,
 } from '../../state';
 
 export class HomeScreen extends Component {
@@ -32,6 +33,7 @@ HomeScreen.propTypes = {
 function mapStateToProps(state) {
   return {
     feedItems: selectFeed(state),
+    upcomingEvent: selectUpcomingEvent(state),
   };
 }
 export default connect(mapStateToProps)(HomeScreen);

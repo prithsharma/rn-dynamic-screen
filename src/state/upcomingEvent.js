@@ -46,8 +46,8 @@ export function fetchUpcomingEvent() {
       const response = await get('/v4/event');
       const responseObj = await response.json();
 
-      if (response.ok) {
-        dispatch(success(responseObj.data));
+      if (response.ok && responseObj.data.length > 0) {
+        dispatch(success(responseObj.data[0]));
       } else {
         dispatch(error({ code: 'UNKNOWN_REQUEST_ERROR', meta: responseObj }));
       }
