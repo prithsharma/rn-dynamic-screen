@@ -1,5 +1,7 @@
 # Dynamic Landing Screen with React Native
 
+Dynamic landing screen for a content app using React Native.
+
 ## App Demo
 
 <img src="./demo/landing-screen.gif" alt="Demo GIF" width="432" height="768" />
