@@ -10,7 +10,9 @@ Dynamic landing screen for a content app using React Native.
 
 ## App Demo
 
-<img src="./demo/landing-screen.gif" alt="Demo GIF" width="432" height="768" />
+Android             |  iOS
+:-------------------------:|:-------------------------:
+<img src="./demo/android.gif" alt="Demo GIF" width="288" height="512" /> | <img src="./demo/ios.gif" alt="Demo GIF" width="288" height="512" />
 
 ## Storybook Demo
 
