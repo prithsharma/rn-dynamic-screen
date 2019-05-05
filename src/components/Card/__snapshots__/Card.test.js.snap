@@ -105,11 +105,16 @@ exports[`EventCard renders correctly 1`] = `
     }
   >
     <ScalableImage
-      background={false}
+      background={true}
       onSize={[Function]}
       source={
         Object {
           "uri": "http://res.cloudinary.com/onefc/image/upload/v1554878097/events/Bangkok-2019-05-10/upcoming",
+        }
+      }
+      style={
+        Object {
+          "justifyContent": "flex-end",
         }
       }
       width={750}
