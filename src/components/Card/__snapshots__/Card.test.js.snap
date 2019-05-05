@@ -137,7 +137,6 @@ exports[`EventCardMinimised renders correctly 1`] = `
         "borderTopColor": "#ffcc01",
         "borderTopWidth": 2,
         "flexDirection": "row",
-        "marginBottom": 10,
         "padding": 6,
       }
     }
@@ -203,6 +202,7 @@ exports[`VideoCard renders correctly 1`] = `
       <Text
         style={
           Object {
+            "color": "black",
             "fontSize": 16,
             "fontWeight": "bold",
           }
@@ -210,22 +210,38 @@ exports[`VideoCard renders correctly 1`] = `
       >
         Regian Eersel's game
       </Text>
-      <Image
-        source={
-          Object {
-            "uri": "http://res.cloudinary.com/onefc/image/upload/v1554878097/events/Bangkok-2019-05-10/upcoming",
+      <View>
+        <Image
+          source={
+            Object {
+              "uri": "http://res.cloudinary.com/onefc/image/upload/v1554878097/events/Bangkok-2019-05-10/upcoming",
+            }
           }
-        }
-        style={
-          Object {
-            "aspectRatio": 1.7777777777777777,
-            "marginBottom": 4,
-            "marginTop": 8,
-            "resizeMode": "contain",
-            "width": "100%",
+          style={
+            Object {
+              "aspectRatio": 1.7777777777777777,
+              "marginBottom": 4,
+              "marginTop": 8,
+              "resizeMode": "contain",
+              "width": "100%",
+            }
           }
-        }
-      />
+        />
+        <Image
+          source={
+            Object {
+              "testUri": "../../../src/components/Card/assets/video-play-icon.png",
+            }
+          }
+          style={
+            Object {
+              "left": "44%",
+              "position": "absolute",
+              "top": "44%",
+            }
+          }
+        />
+      </View>
       <View>
         <Text
           style={
@@ -242,6 +258,7 @@ exports[`VideoCard renders correctly 1`] = `
           numberOfLines={2}
           style={
             Object {
+              "color": "black",
               "fontSize": 12,
             }
           }
