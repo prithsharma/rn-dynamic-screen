@@ -32,6 +32,8 @@ file [here](./env).
 reusable.
 - Follows the `ducks` file structure for `state` to aid this. `actions`, `reducers` and `selectors`
 for one redux store slice in the same file.
+- Uses `createSlice` method from `redux-starter-kit` to specify `actions`, `iniialState`, and
+`reducers` all together in a verbose fashion for a store slice.
 - I assumed a placeholder logic for the `upcoming`, `nearing` and `live` banner image states of an
 upcoming event.
 

@@ -51,6 +51,7 @@ const {
 
 export default reducer;
 
+// Thunk to fetch feed from the API
 export function fetchFeed() {
   return async (dispatch) => {
     dispatch(request());
@@ -70,6 +71,7 @@ export function fetchFeed() {
   };
 }
 
+// state selector for use in UI
 export function selectFeed(state) {
   const {
     byId,

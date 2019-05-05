@@ -32,6 +32,7 @@ export default class Countdown extends Component {
   }
 
   componentDidMount() {
+    // Update countdown timer every second
     this.intervalId = setInterval(() => {
       this.setState({
         duration: this.getDurationFromNow(),
@@ -55,7 +56,9 @@ export default class Countdown extends Component {
 
     return (
       <View style={[styles.timeBlock, { padding: blockPadding }]}>
-        <Text style={[styles.timeValue, { fontSize: fontSizeValue }]}>{value.toString().padStart(2, '0')}</Text>
+        <Text style={[styles.timeValue, { fontSize: fontSizeValue }]}>
+          {value.toString().padStart(2, '0')}
+        </Text>
         <Text style={[styles.timeLabel, { fontSize: fontSizeLabel }]}>{label}</Text>
       </View>
     );

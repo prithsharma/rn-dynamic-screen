@@ -39,6 +39,7 @@ const {
 
 export default reducer;
 
+// Thunk to fetch upcoming event from the servers
 export function fetchUpcomingEvent() {
   return async (dispatch) => {
     dispatch(request());
@@ -58,6 +59,7 @@ export function fetchUpcomingEvent() {
   };
 }
 
+// state selector for use in UI
 export function selectUpcomingEvent(state) {
   const {
     data,
