@@ -6,13 +6,13 @@ Dynamic landing screen for a content app using React Native.
 
 - Android APK [v0.1](https://github.com/prithsharma/rn-dynamic-screen/releases/download/0.1/one-landing.apk)
 - iOS .app [v0.1](https://github.com/prithsharma/rn-dynamic-screen/releases/download/0.1/OneLandingScreen.app.zip)
-(Install with `xcrun simctl install <SIMULATOR_UID> <path/to/OneLandingScreen.app>`)
+(Install with `xcrun simctl install <SIMULATOR_UID> <path/to/OneLandingScreen.app>` after extracting)
 
 ## App Demo
 
 Android             |  iOS
 :-------------------------:|:-------------------------:
-<img src="./demo/android.gif" alt="Demo GIF" width="288" height="512" /> | <img src="./demo/ios.gif" alt="Demo GIF" width="288" height="512" />
+<img src="./demo/android.gif" alt="Demo GIF" width="432" height="768" /> | <img src="./demo/ios.gif" alt="Demo GIF" width="432" height="768" />
 
 ## Storybook Demo
 
@@ -23,9 +23,10 @@ Android             |  iOS
 - `yarn rn start` will start the usual RN server for serving files in the debug mode.
 - `yarn storybook` serves the storybook mode, with all components shown independently in the
 storybook. Helpful for manual testing and independently operating on components.
-- `yarn android` for building and installing a debug build to an attached Android device
+- `yarn android`/`yarn ios` for building and installing a debug build to an attached
+device/simulator.
+- `yarn test` for running `Jest` tests.
 - `yarn lint` for running lint tests.
-- `yarn test` for running `Jest` unit tests.
 - The dev setup is dependent on the environment config file(.env) that contains configuration keys
 (`API_HOST`) that the app needs. (Please get in touch with me for getting env secrets). Sample env
 file [here](./env).
@@ -43,7 +44,7 @@ for one redux store slice in the same file.
 - Uses `createSlice` method from `redux-starter-kit` to specify `actions`, `iniialState`, and
 `reducers` all together in a verbose fashion for a store slice.
 - I assumed a placeholder logic for the `upcoming`, `nearing` and `live` banner image states of an
-upcoming event.
+upcoming event, for lack of details on those.
 
 ## TODOs, Notes
 
@@ -56,9 +57,10 @@ as a workaround.
 
 Would have done the following in the next iteration -
 
-- [ ] Abstract out color literals and common styles to Color Palette library.
+- [ ] Abstract out color literals and common styles to a Color Palette or styling lib.
 - [ ] Integration tests for state management. In the current state and for a small/volatile app in
 general, unit tests for reducers would not be of much help. Integration tests would have a higher
 reward to effort.
-- [ ] Write a UI test for the `Countdown` component.
-- [ ] `EventCard` and `EventCardMinimised` potentially have some common code that can be refactored out.
+- [ ] A UI test for the `Countdown` component.
+- [ ] `EventCard` and `EventCardMinimised` potentially have some common code that can be refactored
+out.
