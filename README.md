@@ -2,6 +2,12 @@
 
 Dynamic landing screen for a content app using React Native.
 
+### App for Download
+
+- Android APK [v0.1](https://github.com/prithsharma/rn-dynamic-screen/releases/download/0.1/one-landing.apk)
+- iOS .app [v0.1](https://github.com/prithsharma/rn-dynamic-screen/releases/download/0.1/OneLandingScreen.app.zip)
+(Install with `xcrun simctl install <SIMULATOR_UID> <path/to/OneLandingScreen.app>`)
+
 ## App Demo
 
 <img src="./demo/landing-screen.gif" alt="Demo GIF" width="432" height="768" />
