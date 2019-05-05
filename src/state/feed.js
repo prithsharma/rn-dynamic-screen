@@ -33,10 +33,10 @@ const feedSlice = createSlice({
         error: null,
       };
     },
-    error: state => ({
+    error: (state, payload) => ({
       ...state,
       isLoading: false,
-      error: true,
+      error: payload,
     }),
   },
 });
@@ -65,7 +65,7 @@ export function fetchFeed() {
       }
     } catch (e) {
       Logger.error(e);
-      dispatch(error({ code: 'UNKNOWN_REQUEST_ERROR', meta: e }));
+      dispatch(error({ code: 'UNKNOWN_REQUEST_ERROR', meta: e.message }));
     }
   };
 }
