@@ -29,9 +29,6 @@ export default function EventItem(props) {
 
   return (
     <EventCard
-      title={upcomingEvent.content.name}
-      city={upcomingEvent.content.city}
-      localTime={upcomingEvent.localTime}
       imgUri={imgUri}
       timestampStr={upcomingEvent.startTime}
       showCountdown={!isLive}

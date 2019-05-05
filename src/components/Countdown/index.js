@@ -104,7 +104,7 @@ styles = StyleSheet.create({
     backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
-    marginHorizontal: 4,
+    paddingHorizontal: 4,
   },
   timeBlock: {
     alignItems: 'center',

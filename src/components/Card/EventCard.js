@@ -19,7 +19,6 @@ function Card(props) {
     imgUri,
     timestampStr,
     showCountdown,
-    ...restProps
   } = props;
 
   const countdown = showCountdown && (
@@ -29,24 +28,26 @@ function Card(props) {
   );
 
   return (
-    <TouchableWithoutFeedback onPress={onPress} {...restProps}>
+    <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.container}>
         <Image
-          style={styles.image}
-          width={VP_WIDTH}
           source={{ uri: imgUri }}
-        />
-        {countdown}
+          background
+          width={VP_WIDTH}
+          style={styles.image}
+        >
+          {countdown}
+        </Image>
       </View>
     </TouchableWithoutFeedback>
   );
 }
 
 Card.propTypes = {
-  onPress: PropTypes.func,
   imgUri: PropTypes.string.isRequired,
   timestampStr: PropTypes.string.isRequired,
   showCountdown: PropTypes.bool.isRequired,
+  onPress: PropTypes.func,
 };
 
 Card.defaultProps = {
@@ -58,11 +59,8 @@ styles = StyleSheet.create({
     backgroundColor: 'white',
     marginBottom: 10,
   },
-  countdownContainer: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
+  image: {
+    justifyContent: 'flex-end',
   },
 });
 
