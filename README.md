@@ -45,6 +45,13 @@ upcoming event.
 
 ## TODOs, Notes
 
+- The upcoming event API has CDN asset links with `HTTP` and not `HTTPS`. Not only is this
+generally insecure and not recommended, Cleartext HTTP traffic is not permitted after Android 8
+([ref](https://stackoverflow.com/questions/45940861/android-8-cleartext-http-traffic-not-permitted)).
+Spend substantial time scratching my head debugging this and then had to add
+[this](https://github.com/prithsharma/rn-dynamic-screen/commit/6a879c762cdc5e4adfe68d8cce05ea9d40e1af93)
+as a workaround.
+
 Would have done the following in the next iteration -
 
 - [ ] Abstract out color literals and common styles to Color Palette library.
