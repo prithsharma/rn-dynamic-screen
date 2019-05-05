@@ -29,10 +29,16 @@ function Card(props) {
           <Text style={styles.titleText}>
             {titleText}
           </Text>
-          <Image
-            style={styles.image}
-            source={{ uri: imgUri }}
-          />
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.image}
+              source={{ uri: imgUri }}
+            />
+            <Image
+              style={styles.overlayIcon}
+              source={require('./assets/video-play-icon.png')}
+            />
+          </View>
           <View style={styles.descriptionContainer}>
             <Text style={styles.timestamp}>
               {timestampText}
@@ -77,6 +83,11 @@ styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: 'black',
+  },
+  overlayIcon: {
+    position: 'absolute',
+    top: '44%',
+    left: '44%',
   },
   image: {
     width: '100%',
