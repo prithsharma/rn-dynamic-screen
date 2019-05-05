@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "black",
+      "height": 64,
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../src/components/Header/assets/logo.png",
+      }
+    }
+    style={
+      Object {
+        "height": "80%",
+        "maxWidth": 96,
+        "resizeMode": "cover",
+      }
+    }
+  />
+</View>
+`;
