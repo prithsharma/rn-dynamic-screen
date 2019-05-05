@@ -71,7 +71,6 @@ styles = StyleSheet.create({
     borderTopWidth: 2,
     borderTopColor: '#ffcc01',
     backgroundColor: 'black',
-    marginBottom: 10,
     flexDirection: 'row',
     padding: 6,
   },
