@@ -114,13 +114,11 @@ export class HomeScreen extends Component {
         data={feedItems}
         style={styles.container}
         contentContainerStyle={styles.feed}
-        // bounces={false}
         renderItem={FeedItem}
         ListHeaderComponent={this.renderUpcomingEvent}
         ItemSeparatorComponent={FeedSeparator}
         keyExtractor={item => (item ? item.id : 'key')}
         onRefresh={this.refreshData}
-        progressViewOffset={80}
         refreshing={isLoading}
         onScroll={this.updateHeaderState}
       />
