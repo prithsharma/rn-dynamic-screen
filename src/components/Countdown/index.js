@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  Platform,
   StyleSheet,
   Text,
   View,
@@ -103,17 +104,24 @@ styles = StyleSheet.create({
     marginHorizontal: 4,
   },
   timeBlock: {
-    // flex: 1,
     alignItems: 'center',
     padding: 6,
   },
   timeValue: {
-    fontFamily: 'RobotoBold',
+    ...Platform.select({
+      android: {
+        fontFamily: 'RobotoBold',
+      },
+    }),
     color: 'white',
     fontWeight: '800',
   },
   timeLabel: {
-    fontFamily: 'Roboto',
+    ...Platform.select({
+      android: {
+        fontFamily: 'Roboto',
+      },
+    }),
     color: 'white',
   },
 });
