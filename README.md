@@ -39,9 +39,9 @@ upcoming event.
 
 Would have done the following in the next iteration -
 
-- Abstract out color literals and common styles to Color Palette library.
-- Integration tests for state management. In the current state and for a small/volatile app in
+- [ ] Abstract out color literals and common styles to Color Palette library.
+- [ ] Integration tests for state management. In the current state and for a small/volatile app in
 general, unit tests for reducers would not be of much help. Integration tests would have a higher
 reward to effort.
-- Write a UI test for the `Countdown` component.
-- `EventCard` and `EventCardMinimised` potentially have some common code that can be refactored out.
+- [ ] Write a UI test for the `Countdown` component.
+- [ ] `EventCard` and `EventCardMinimised` potentially have some common code that can be refactored out.
