@@ -108,10 +108,12 @@ styles = StyleSheet.create({
     padding: 6,
   },
   timeValue: {
+    fontFamily: 'RobotoBold',
     color: 'white',
     fontWeight: '800',
   },
   timeLabel: {
+    fontFamily: 'Roboto',
     color: 'white',
   },
 });

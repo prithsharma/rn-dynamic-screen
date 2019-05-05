@@ -66,5 +66,10 @@
       "pattern": "**/**.stories.js",
       "outputFile": "./storybook/storyLoader.js"
     }
+  },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/"
+    ]
   }
 }
